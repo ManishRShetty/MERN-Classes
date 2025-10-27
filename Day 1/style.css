@@ -1,0 +1,83 @@
+/* style.css */
+/* Basic reset and font styling */
+ body {
+ font-family: Arial, sans-serif;
+ background-color: #f4f4f9;
+ margin: 0;
+ padding: 0;
+ display: flex; /* Use Flexbox on the body */
+ justify-content: center; /* Center horizontally */
+ align-items: center; /* Center vertically */
+ min-height: 100vh; /* Ensure body takes full viewport height */
+}
+ .todo-container {
+ background: white;
+ width: 100%;
+ max-width: 500px;
+ padding: 20px;
+ border-radius: 8px;
+ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+ }
+ h1 {
+ text-align: center;
+ color: #333;
+}
+ /* style.css (continued) */
+ #todo-form {
+ display: flex;
+ margin-bottom: 20px;
+ }
+ #todo-input {
+ flex: 1; /* Allows the input to take up available space */
+ padding: 10px;
+ border: 1px solid #ddd;
+ border-radius: 4px;
+ font-size: 16px;
+ }
+ #todo-form button {
+ padding: 10px 15px;
+ border: none;
+ background-color: #4CAF50;
+ color: white;
+ border-radius: 4px;
+ margin-left: 10px;
+ cursor: pointer;
+ font-size: 16px;
+ }
+ #todo-form button:hover {
+ background-color: #45a049;
+ }
+ #task-list {
+ list-style: none;
+ padding: 0;
+ margin: 0;
+ }
+ #task-list li {
+ display: flex;
+ align-items: center;
+ padding: 10px;
+ border-bottom: 1px solid #eee;
+ }
+ #task-list li:last-child {
+ border-bottom: none;
+ }
+ #task-list li span {
+ flex: 1;
+ cursor: pointer;
+ }
+ #task-list li.completed span {
+ text-decoration: line-through;
+ color: #aaa;
+ }
+ #task-list .delete-btn {
+ background-color: #f44336;
+ color: white;
+ border: none;
+ padding: 5px 10px;
+ border-radius: 4px;
+ cursor: pointer;
+ margin-left: 10px;
+ }
+ #task-list .delete-btn:hover {
+ background-color: #da190b;
+ }

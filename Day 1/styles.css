@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif;
+}
+
+body {
+    background-color: #252525;
+}
+
+.header {
+    color: #ffe4e4;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.para {
+    color: #dddddd;
+    font-size: 18px;
+    margin: 20px;
+    line-height: 8;
+}
+
+.list {
+    list-style-type: circle;
+    color: #bbbbbb;
+    margin: 20px;
+    padding-left: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
