@@ -1,69 +1,51 @@
 // src/components/TodoList.jsx
-import { useState } from 'react'; // [cite: 323]
+import { useState } from 'react';
 
 function TodoList() {
-  // State for the list of tasks [cite: 317]
-  // We pre-fill with example data as suggested [cite: 325]
   const [tasks, setTasks] = useState([
     { id: 1, text: 'Learn React Components' },
     { id: 2, text: 'Practice Props and State' },
     { id: 3, text: 'Build a To-Do App' },
   ]);
 
-  // State for the new task input field [cite: 318, 328]
-  const [newTask, setNewTask] = useState(""); // [cite: 329]
+  const [newTask, setNewTask] = useState("");
 
-  // Handles adding a new task
   const addTask = () => {
-    // Challenge 1: Prevent empty todos [cite: 430, 431]
-    if (newTask.trim() === "") return; // [cite: 353]
+    if (newTask.trim() === "") return;
 
-    // Create a new task object
     const newTaskObject = {
-      id: Date.now(), // Use timestamp as a simple unique ID [cite: 356]
+      id: Date.now(),
       text: newTask,
     };
 
-    // Update the state immutably (create a new array) [cite: 347]
-    setTasks([...tasks, newTaskObject]); // [cite: 357]
-
-    // Clear the input field [cite: 358]
-    setNewTask(""); // [cite: 359]
+    setTasks([...tasks, newTaskObject]);
+    setNewTask("");
   };
 
-  // Handles deleting a task [cite: 404]
   const deleteTask = (idToDelete) => {
-    // Create a new array excluding the task to delete [cite: 403, 413]
-    const updatedTasks = tasks.filter((task) => task.id !== idToDelete); // [cite: 414]
-    // Set the state to the new array
-    setTasks(updatedTasks); // [cite: 415]
+    const updatedTasks = tasks.filter((task) => task.id !== idToDelete);
+    setTasks(updatedTasks);
   };
 
   return (
-    // Apply CSS class for styling [cite: 451, 480]
     <div className="todo-container">
-      <h2>My To-Do List</h2> {/* [cite: 363] */}
+      <h2>My To-Do List</h2>
 
-      {/* Controlled input for new task [cite: 339-345] */}
       <input
         type="text"
-        value={newTask} // [cite: 365, 341]
-        onChange={(e) => setNewTask(e.target.value)} // [cite: 366, 343]
-        placeholder="Add a new task" // [cite: 367]
+        value={newTask}
+        onChange={(e) => setNewTask(e.target.value)}
+        placeholder="Add a new task"
       />
-      <button onClick={addTask}>Add</button> {/* [cite: 369] */}
+      <button onClick={addTask}>Add</button>
 
-      {/* Render the list of tasks [cite: 375] */}
-      <ul> {/* [cite: 393] */}
-        {tasks.map((task) => ( // [cite: 394]
-          // The 'key' prop is essential for list rendering [cite: 377, 380]
-          <li key={task.id} className="task-item"> {/* [cite: 395, 480] */}
-            <span>{task.text}</span> {/* [cite: 396] */}
-            
-            {/* Delete button for each task */}
+      <ul>
+        {tasks.map((task) => (
+          <li key={task.id} className="task-item">
+            <span>{task.text}</span>
             <button
-              onClick={() => deleteTask(task.id)} // [cite: 421, 422]
-              className="delete-button" // 
+              onClick={() => deleteTask(task.id)}
+              className="delete-button"
             >
               Delete
             </button>
@@ -74,4 +56,4 @@ function TodoList() {
   );
 }
 
-export default TodoList; 
+export default TodoList;
